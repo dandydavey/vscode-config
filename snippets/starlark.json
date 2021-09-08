@@ -1,0 +1,41 @@
+{
+	"filegroup": {
+		"prefix": "filegroup",
+		"body": [
+			"filegroup(",
+			"    name = \"$1\",",
+			"    srcs = [",
+			"        \"$2\",",
+			"    ],",
+			"    visibility = [\"$3\"],",
+			")",
+			""
+		],
+		"description": "filegroup"
+	},
+	"visibility": {
+		"prefix": "visibility",
+		"body": [
+			"package(default_visibility = [",
+			"    \"//experimental:__subpackages__\",",
+			"    $1",
+			"])"
+		],
+		"description": "visibility"
+	},
+	"cc_binary": {
+		"prefix": "cc_binary",
+		"body": [
+			"cc_binary(",
+			"    name = \"$1\",",
+			"    srcs = [\"$2\"],",
+			"    data = [\"$3\"],",
+			"    deps = [",
+			"        \"$4\",",
+			"    ],",
+			")",
+			""
+		],
+		"description": "cc_binary"
+	}
+}

@@ -1,0 +1,89 @@
+{
+	"py-main": {
+		"prefix": "py-main",
+		"body": [
+			"import argparse",
+			"",
+			"def main():",
+			"    $0",
+			"",
+			"if __name__ == '__main__':",
+			"    parser = argparse.ArgumentParser(",
+			"        description=__doc__,",
+			"        formatter_class=argparse.ArgumentDefaultsHelpFormatter)",
+			"    parser.add_argument('$1', help='$2', default='$3')",
+			"",
+			"    args = parser.parse_args()",
+			"    main()"
+		],
+		"description": "py-main"
+	},
+	"ipython embed": {
+		"prefix": "ipython",
+		"body": [
+			"import IPython; IPython.embed()"
+		],
+		"description": "ipython embed"
+	},
+	"third_party": {
+		"prefix": "third_party",
+		"body": [
+			"import third_party.py  # pylint: disable=unused-import"
+		],
+		"description": "third_party"
+	},
+	"user-defined exception": {
+		"prefix": "exception",
+		"body": [
+			"class $1(Exception):",
+			"    \"\"\"Exception raised for $2\"\"\"",
+			"    def __init__(self, msg):",
+			"        super().__init__('$3: {}'.format(msg))",
+			""
+		],
+		"description": "user-defined exception"
+	},
+	"def-method": {
+		"prefix": "def",
+		"body": [
+			"def $1($2: $3) -> $4:",
+			"    \"\"\"$5",
+			"",
+			"    Args:",
+			"        :$6",
+			"    \"\"\"",
+			"    $7"
+		],
+		"description": "def-method"
+	},
+	"argparse_bool": {
+		"prefix": "argparse_bool",
+		"body": [
+			"parser.add_argument('$1', action='store_false', help='$2')"
+		],
+		"description": "argparse_bool"
+	},
+	"refresh-dir": {
+		"prefix": "refresh-dir",
+		"body": [
+			"def refresh_dir(path):",
+			"    \"\"\"Hacky debugging snippet to delete directory if it exists and replace it\"\"\"",
+			"    import shutil",
+			"    if os.path.exists(path):",
+			"        print('deleted stuff')",
+			"        shutil.rmtree(path, ignore_errors=True)",
+			"    print('created stuff')",
+			"    os.makedirs(path)",
+			"    import time",
+			"    time.sleep(1)"
+		],
+		"description": "refresh-dir"
+	},
+	"make-dir": {
+		"prefix": "make-dir",
+		"body": [
+			"os.makedirs(output_dir, exist_ok=True)"
+		],
+		"description": "make-dir"
+	}
+}

@@ -1,0 +1,67 @@
+{
+	"Init Google logging": {
+		"prefix": "glog",
+		"body": [
+			"google::InitGoogleLogging(argv[0]);"
+		],
+		"description": "Invocation to start glogging"
+	},
+	"cpp main": {
+		"prefix": "cpp-main",
+		"body": [
+			"#include <iostream>",
+			"#include <string>",
+			"",
+			"#include \"third_party/glog/logging.h\"",
+			"",
+			"#include \"common/program_options.hh\"",
+			"",
+			"namespace po = ::boost::program_options;",
+			"",
+			"int main(int argc, char *argv[]) {",
+			"    google::InitGoogleLogging(argv[0]);",
+			"",
+			"    std::string foo;",
+			"    po::options_description options_desc(\"bar\");",
+			"",
+			"    // clang-format off",
+			"    options_desc.add_options()",
+			"        (\"foo_option\", po::value(&foo)->required(), \"\");",
+			"    // clang-format on",
+			"",
+			"    av::parse_command_line(argc, argv, options_desc, \"\");",
+			"",
+			"    $0",
+			"    return EXIT_SUCCESS;",
+			"}",
+			""
+		],
+		"description": "cpp main"
+	},
+	"write-file": {
+		"prefix": "write-file",
+		"body": [
+			"std::ofstream outfile;",
+			"outfile.open(\"$1\");",
+			"outfile << $2;",
+			"outfile.close();"
+		],
+		"description": "write-file"
+	},
+	"read-file": {
+		"prefix": "read-file",
+		"body": [
+			"std::ifstream in(\"$1\");",
+			"std::stringstream buffer;",
+			"buffer << in.rdbuf();"
+		],
+		"description": "read-file"
+	},
+	"incl": {
+		"prefix": "incl",
+		"body": [
+			"#include \"$1\""
+		],
+		"description": "incl"
+	}
+}

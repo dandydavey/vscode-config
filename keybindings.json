@@ -1,0 +1,84 @@
+// Place your key bindings in this file to override the defaults
+[
+    {
+        "key": "capslock",
+        "command": "extension.vim_escape",
+        "when": "editorTextFocus && vim.active && !inDebugRepl"
+    },
+    {
+        "key": "ctrl+alt+b",
+        "command": "workbench.view.extension.bookmarks"
+    },
+    {
+        "key": "ctrl+shift+/",
+        "command": "copyRelativeFilePath",
+        "when": "editorFocus"
+    },
+    {
+        "key": "ctrl+shift+alt+c",
+        "command": "-copyRelativeFilePath",
+        "when": "!editorFocus"
+    },
+    {
+        "key": "ctrl+shift+d",
+        "command": "-workbench.view.debug"
+    },
+    {
+        "key": "ctrl+shift+d",
+        "command": "workbench.explorer.fileView.focus"
+    },
+    {
+        "key": "ctrl+shift+a",
+        "command": "editor.action.selectHighlights",
+        "when": "editorFocus"
+    },
+    {
+        "key": "ctrl+shift+l",
+        "command": "-editor.action.selectHighlights",
+        "when": "editorFocus"
+    },
+    {
+        "key": "ctrl+shift+a",
+        "command": "addCursorsAtSearchResults",
+        "when": "fileMatchOrMatchFocus && searchViewletVisible"
+    },
+    {
+        "key": "ctrl+shift+l",
+        "command": "-addCursorsAtSearchResults",
+        "when": "fileMatchOrMatchFocus && searchViewletVisible"
+    },
+    {
+        "key": "ctrl+shift+a",
+        "command": "selectAllSearchEditorMatches",
+        "when": "inSearchEditor"
+    },
+    {
+        "key": "ctrl+shift+l",
+        "command": "-selectAllSearchEditorMatches",
+        "when": "inSearchEditor"
+    },
+    {
+        "key": "ctrl+n",
+        "command": "extension.vim_ctrl+n",
+        "when": "editorTextFocus && vim.active && vim.use<C-n> && !inDebugRepl || vim.active && vim.use<C-n> && !inDebugRepl && vim.mode == 'CommandlineInProgress' || vim.active && vim.use<C-n> && !inDebugRepl && vim.mode == 'SearchInProgressMode'"
+    },
+    {
+        "key": "ctrl+n",
+        "command": "-extension.vim_ctrl+n",
+        "when": "editorTextFocus && vim.active && vim.use<C-n> && !inDebugRepl || vim.active && vim.use<C-n> && !inDebugRepl && vim.mode == 'CommandlineInProgress' || vim.active && vim.use<C-n> && !inDebugRepl && vim.mode == 'SearchInProgressMode'"
+    },
+    {
+        "key": "ctrl+n",
+        "command": "explorer.newFile"
+    },
+    {
+        "key": "ctrl+shift+alt+q",
+        "command": "extension.vim_ctrl+j",
+        "when": "editorTextFocus && vim.active && vim.use<C-j> && !inDebugRepl"
+    },
+    {
+        "key": "ctrl+j",
+        "command": "-extension.vim_ctrl+j",
+        "when": "editorTextFocus && vim.active && vim.use<C-j> && !inDebugRepl"
+    },
+]
