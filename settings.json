@@ -73,7 +73,6 @@
         },
     ],
     "editor.minimap.enabled": false,
-    "window.zoomLevel": 2,
     "breadcrumbs.enabled": true,
     "workbench.statusBar.visible": true,
     "[cpp]": {
@@ -89,5 +88,6 @@
     "[python]": {
         "editor.defaultFormatter": "ms-python.python"
     },
-    "terminal.integrated.shell.osx": "/bin/bash"
+    "terminal.integrated.shell.osx": "/bin/bash",
+    "window.zoomLevel": 2
 }
