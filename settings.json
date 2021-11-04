@@ -89,5 +89,9 @@
         "editor.defaultFormatter": "ms-python.python"
     },
     "terminal.integrated.shell.osx": "/bin/bash",
-    "window.zoomLevel": 2
+    "security.workspace.trust.emptyWindow": false,
+    "security.workspace.trust.untrustedFiles": "open",
+    "workbench.startupEditor": "none",
+    "go.toolsManagement.autoUpdate": true,
+    "window.zoomLevel": 1
 }
